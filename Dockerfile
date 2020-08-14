@@ -17,6 +17,8 @@ COPY config.json /etc/v2ray/
 RUN apk update && apk add ca-certificates && \
     mkdir -p /usr/bin/v2ray && \
     tar xvfz /tmp/v2ray.tgz -C /usr/bin/v2ray && \
+    chmod +x /usr/bin/v2ray/v2ctl && \
+    chmod +x /usr/bin/v2ray/v2ray && \
     mkdir -p /etc/v2ray && \
     cat /etc/v2ray/config.json
 
