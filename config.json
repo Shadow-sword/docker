@@ -1,0 +1,22 @@
+{
+  "inbounds": [{
+    "port": 36534,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [{
+        "id": "UUID",
+        "alterId": 4
+      }]
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+        "path": "WSPATH"
+      }
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  }]
+}
