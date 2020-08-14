@@ -14,6 +14,8 @@ FROM alpine
 LABEL maintainer "V2Fly Community <vcptr@v2fly.org>"
 COPY --from=builder /tmp/v2ray.tgz /tmp
 COPY config.json /etc/v2ray/
+ARG UUID
+ARG WSPATH
 RUN apk update && apk add ca-certificates && \
     mkdir -p /usr/bin/v2ray && \
     tar xvfz /tmp/v2ray.tgz -C /usr/bin/v2ray && \
