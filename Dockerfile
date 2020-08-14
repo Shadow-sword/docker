@@ -23,6 +23,10 @@ RUN apk update && apk add ca-certificates && \
     ls -l /usr/bin/v2ray/ && \
     mkdir -p /etc/v2ray && \
     cat /etc/v2ray/config.json
+    chgrp -R 0 /usr/bin/v2ray && \
+        chmod -R g=u /usr/bin/v2ray && \
+    chgrp -R 0 /etc/v2ray && \
+        chmod -R g=u /etc/v2ray
 
 #ENTRYPOINT ["/usr/bin/v2ray/v2ray"]
 ENV PATH /usr/bin/v2ray:$PATH
