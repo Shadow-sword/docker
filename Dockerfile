@@ -14,14 +14,10 @@ FROM alpine
 LABEL maintainer "V2Fly Community <vcptr@v2fly.org>"
 COPY --from=builder /tmp/v2ray.tgz /tmp
 COPY config.json /etc/v2ray/
-ARG UUID
-ARG WSPATH
 RUN apk update && apk add ca-certificates && \
     mkdir -p /usr/bin/v2ray && \
     tar xvfz /tmp/v2ray.tgz -C /usr/bin/v2ray && \
     mkdir -p /etc/v2ray && \
-    sed -i "s/UUID/${UUID}/g" /etc/v2ray/config.json && \
-    sed -i "s/WSPATH/${WSPATH}/g" /etc/v2ray/config.json && \
     cat /etc/v2ray/config.json
 
 #ENTRYPOINT ["/usr/bin/v2ray/v2ray"]

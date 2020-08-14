@@ -4,14 +4,14 @@
     "protocol": "vmess",
     "settings": {
       "clients": [{
-        "id": "UUID",
+        "id": "cf449641-440b-436a-8dd8-811c65ae6e4c",
         "alterId": 4
       }]
     },
     "streamSettings": {
       "network": "ws",
       "wsSettings": {
-        "path": "WSPATH"
+        "path": "/notnil"
       }
     }
   }],
